@@ -36,5 +36,24 @@ contract b_iri {
     //mapping (address => uint) public pick_up_rep;
     //mapping (address => uint) public completed_trip_rep;
 
-    
+}
+
+contract TimeLockedDeposti {
+    uint public balance // Balance to withhold driver and rider deposits
+    address payable rider // Rider address
+    address payable driver // driver address     
+    uint public rider_reposit // RiderDeposit     
+    uint public driver_deposit // DriverDeposit     
+    //address [] Set // set of obfuscated locations     
+    //address [] A_i // Signatures of elements in the set
+
+    //constructor(address _driver, address _Set, address _A_i, uint _rider_deposit) {
+      constructor(uint _rider_deposit) payable {
+            //driver = _driver;
+            rider = msg.sender;
+            balance = _rider_deposit;
+      //      Set = _Set;
+        //    A_i = _A_i;
+        }
+
 }
